@@ -1,7 +1,7 @@
 const axios = require('axios');
 const readline = require('readline');
 
-const api_key = 'xxxxx';
+const api_key = `${process.env.API_KEY}`;
 
 const rl = readline.createInterface({
   input: process.stdin,
