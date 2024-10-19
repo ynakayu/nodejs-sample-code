@@ -14,7 +14,14 @@ function get_weather_by_zip_code(formatted_zip) {
   axios.get(url)
     .then(function(response){
       const weather_data = response.data;
-      console.log(weather_data);
+      // console.log(weather_data);
+      console.log(`郵便番号: ${formatted_zip}`);
+      console.log(`エリア: ${weather_data.name}`);
+      console.log(`気温: ${(weather_data.main.temp - 273.15).toFixed(2)}℃`);
+      console.log(`天候: ${weather_data.weather[0].description}`);
+      console.log(`湿度: ${weather_data.main.humidity}%`);
+      console.log(`風速: ${weather_data.wind.speed}m/s`);
+      
     })
     .catch(function(error){
       console.log('エラーが発生しました。郵便番号が正しいか確認してください。');
